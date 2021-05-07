@@ -15,6 +15,7 @@ The script will:
 1) Import csv into pandas dataframe, and calculate long term IPC trends
 2) Join long term trend data to the admin / LHZ names associated with each area from shapefile, delete unnecessary fields (i.e: FID, EFF_YEAR) from the shapefile, and sort the data
 3) Export results to an Excel file, and make sure the Excel file is easy to read / formatted nicely (i.e: Percentages displayed as a percent)
+4) Aggregate the data by the selected admin level and produce graphs (This is optional)
 """
 
 import pandas as pd
@@ -220,16 +221,3 @@ if params['IPC_Aggregation'] == True:
     make_charts.av_ipc_chart()
 
 print("Script Complete")
-
-
-
-
-
-
-
-
-
-
-
-
-
