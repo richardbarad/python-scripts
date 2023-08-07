@@ -57,7 +57,7 @@ def get_wrsi_data():
 WRSI_data = get_wrsi_data()
 
 #Excel Files to import
-et_crop_prod = r'.\05.WRSI\Crop Production Data\ET_agprod_data.xlsx'
+et_crop_prod = r'.\Crop Production Data\ET_agprod_data.xlsx'
 
 #Array of new zones created from 2003 - Present, first item in dictionary is new zone and second item is zone which new zone used to be part of
 changed_admin = {'Argoba':'South Wollo','Southeast Tigray':'South Tigray','Pawe':'Metekel',\

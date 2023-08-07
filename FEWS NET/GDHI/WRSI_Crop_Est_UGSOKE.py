@@ -90,8 +90,8 @@ def get_wrsi_data():
 WRSI_data = get_wrsi_data()
 
 #Excel Files to import containg crop production data 
-so_crop_prod = r'.\05.WRSI\Crop Production Data\SO_agprod_data.xlsx'
-ke_crop_prod = r'.\05.WRSI\Crop Production Data\KE_agprod_data.xlsx'
+so_crop_prod = r'.\Crop Production Data\SO_agprod_data.xlsx'
+ke_crop_prod = r'.\Crop Production Data\KE_agprod_data.xlsx'
 
 fnids = WRSI_data['MaizeL'].iloc[:,:7] #Get just FNIDs in a seperate Datafarame
 
@@ -274,7 +274,7 @@ class ke_crop_data():
     def clean_ke_data(): #Clean / pivot KE Crop Data
         print('Clean KE Crop Data')
         ke_crop = ke_crop_data.read_ke_data()
-        ke_crop = ke_crop[['fnid','admin_1','admin_2','period_date','season_name','season_year','value','product','crop_production_system','status']] #Select relevant columns
+        ke_crop = ke_crop[['fnid','admin_1','admin_2','period_date','season_name','season_year','value','product','status']] #Select relevant columns
         ke_crop = ke_crop[ke_crop['status'] != 'Not Collected'] #Filter out not collected data
         ke_crop = ke_crop[ke_crop['product'].isin(['Maize Grain (White)'])] #filter to only the relevant crop
         ke_crop['year'] = ke_crop['season_year'].str[-4:].astype(int) #Create a year field
